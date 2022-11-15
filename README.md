@@ -14,7 +14,7 @@
 [link to video]()
 
 ## Live Demo
-
+[Live project link](https://financiaaal.herokuapp.com/)
 
 
 ## Install & Setup
