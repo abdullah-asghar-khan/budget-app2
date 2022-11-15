@@ -1,0 +1,12 @@
+<section class="container-fluid p-2 navibar">
+  <div class="row px-3">
+    <div class="col-6 mt-1">
+      <%= link_to '<i class="fa fa-arrow-left fs-3 fw-normal fa_custom_white" aria-hidden="true"></i>'.html_safe, 'javascript:history.back()' %>
+    </div>
+    <%- if devise_mapping.registerable? && controller_name != 'registrations' %> 
+    <div class="col-6 d-flex justify-content-end mt-1 mr-1">
+        <%= link_to '<i class="fa fa-user-plus fs-2 fw-normal fa_custom_white" aria-hidden="true"></i>'.html_safe, new_user_registration_path %>
+    </div>
+    <% end %>
+  </div>
+</section>

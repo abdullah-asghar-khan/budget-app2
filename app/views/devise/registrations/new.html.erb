@@ -1,28 +1,34 @@
-<h2>Sign up</h2>
+<%= render 'devise/shared/devise_top_nav'%>
+<div class="container-fluid w-md-50 d-flex flex-column align-items-center mt-1 pb-5">
+  <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "w-75 w-md-50 mt-4"}) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field mt-3">      
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form-control", placeholder: "Fullname", required: true %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="field mt-3">      
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Email", required: true %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field mt-3">     
+      <% if @minimum_password_length %>
+      <em class="text-muted">(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder: "Password", required: true %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-<%= render "devise/shared/links" %>
+    <div class="field mt-3">      
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"form-control", placeholder: "Confirm Password", required: true %>
+    </div>
+
+    <div class="actions mt-3">
+      <%= f.submit "Create Account", class:"btn btn-primary mb-3" %>
+    </div>
+    <p class="text-muted"> By clicking "Create Account" you agree to our <a href="#!">Terms of use</a> and <a href="#!">Privacy policy</a>.</p>
+  
+    <%= render "devise/shared/links" %>
+  <% end %>  
+</div>

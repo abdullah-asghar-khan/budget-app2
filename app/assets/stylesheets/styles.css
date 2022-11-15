@@ -1,0 +1,16 @@
+.finanz {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
+.fa_custom_white {
+  color:  var(--accent-color-2);
+}
+
+.navibar {
+  background-color: var(--primary-color-dark);
+}
+
+.hover {
+  cursor: pointer;
+}
