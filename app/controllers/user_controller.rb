@@ -1,4 +1,6 @@
-class UserController < ApplicationController 
+# frozen_string_literal: true
+
+class UserController < ApplicationController
   before_action :authenticate_user!
 
   def index; end
@@ -7,5 +9,5 @@ class UserController < ApplicationController
 
   def create; end
 
-  def destroy; end 
+  def destroy; end
 end
