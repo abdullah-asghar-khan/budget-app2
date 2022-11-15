@@ -1,2 +1,27 @@
-<h1>Categories#new</h1>
-<p>Find me in app/views/categories/new.html.erb</p>
+<header class="my_nav d-flex justify-content-between align-items-center p-2 mb-4">
+  <nav>
+    <%= link_to 'javascript:history.back()', class: "btn btn-sm" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+      </svg>
+    <% end %>     
+  </nav>
+  <span class="fs-5 text-white" >ADD NEW CATEGORY</span>
+  <br>    
+</header>
+
+<%= form_with model: @category, url: user_categories_path(current_user),  scope: :category, class: 'd-flex flex-column  col-md-5 justify-content-center align-items-center' do |f| %>
+  <div class="input-group p-2  mb-3">
+    <%= f.label :icon, class: "input-group-text" %><br />
+    <%= f.text_field :icon, autofocus: true, autocomplete: "icon", class: 'form-control' %>
+  </div>
+
+  <div class="input-group p-2 mb-3">
+    <%= f.label :name, class: "input-group-text" %><br />
+    <%= f.text_field :name, autocomplete: "name", class: 'form-control' %>
+  </div>
+
+  <div class="actions p-3 new-category-btn">
+    <%= f.submit "Save", class: 'btn new-category-btn' %>
+  </div>
+<% end %>

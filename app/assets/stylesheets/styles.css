@@ -1,16 +1,55 @@
+:root {
+  --primary-color: #3778c2;
+  --primary-color-dark: #143361;
+
+  /* --primary-color-dark: #3778c2; */
+  --neutral-color-1: #434b54;
+  --neutral-color-2: #878a8f;
+  --neutral-color-3: #989da3;
+  --accent-color-2: #f5f6f8;
+
+  /* --accent-color: #5fb523; */
+  --accent-color: #2bc999;
+  --white: #fff;
+  --black: #000;
+  --red: #f00;
+  --font: 'Poppins', sans-serif;
+  --alkalami: 'Alkalami', serif;
+}
+
 .finanz {
   font-size: 4rem;
   margin-bottom: 3rem;
 }
 
 .fa_custom_white {
-  color:  var(--accent-color-2);
+  color: var(--accent-color-2);
 }
 
-.navibar {
-  background-color: var(--primary-color-dark);
+.primary-color-dark {
+  color: var(--primary-color-dark);
+}
+
+.navibar,
+.my_nav {
+  background-color: var(--primary-color);
 }
 
 .hover {
   cursor: pointer;
+}
+
+.neutral-color-1 {
+  color: var(--neutral-color-1);
+}
+
+.neutral-color-2 {
+  color: var(--neutral-color-2);
+}
+
+.new-category-btn {
+  background-color: var(--accent-color);
+  width: 100%;
+  color: var(--white);
+  border: 1px solid var(--accent-color-2);
 }

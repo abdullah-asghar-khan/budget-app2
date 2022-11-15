@@ -1,2 +1,31 @@
-<h1>Expenses#new</h1>
-<p>Find me in app/views/expenses/new.html.erb</p>
+<header class="my_nav d-flex justify-content-between align-items-center p-2 mb-4">
+  <nav>
+    <%= link_to 'javascript:history.back()', class: "btn btn-sm" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+      </svg>
+    <% end %>     
+  </nav>
+  <span class="fs-5 text-white" >ADD NEW EXPENSE</span>
+  <br>    
+</header>
+
+<%= form_with model: @expense, url: user_expenses_path, data: { turbo: false }, class: 'd-flex flex-column justify-content-center align-items-center' do |f| %> 
+
+  <div class="field form-group w-75 w-md-50" >
+    <%= f.text_field :name, class:"form-control", autofocus: true, placeholder: "Expense name", value: '' %><br/>
+  </div>
+
+  <div class="field form-group w-75 w-md-50" >
+    <%= f.number_field :amount, class:"form-control", placeholder: "Expense amount" %><br/>
+  </div>
+
+  <div class="w-75">
+    <%= f.label "Please select a category" %>
+    <%= f.collection_select :category_id, current_user.categories, :id, :name, { include_blank: "None" }, class: "form-select form-select-sm w-75", aria: { label: ".form-select-sm example"} %>
+  </div>
+
+  <div class="actions p-3 mt-4 new-category-btn">
+    <%= f.submit "Save", class: 'btn new-category-btn' %>
+  </div>
+<% end %>
