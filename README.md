@@ -11,10 +11,10 @@
 - Bootstap
 
 ## Video Describing the project features
-[link to video]()
+[link to video](https://www.loom.com/share/56dde45beb7f498c81178bb9597a9f2e)
 
 ## Live Demo
-[Live project link]
+[Live project link](https://financiaaal.herokuapp.com/)
 
 
 ## Install & Setup
